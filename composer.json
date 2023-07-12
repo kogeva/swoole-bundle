@@ -1,5 +1,5 @@
 {
-    "name": "pixelfederation/swoole-bundle",
+    "name": "kogeva/swoole-bundle",
     "type": "library",
     "description": "Swoole Symfony Bundle",
     "keywords": [
