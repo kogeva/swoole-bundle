@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace K911\Swoole\Bridge\Upscale\Blackfire\Monitoring;
 
 use K911\Swoole\Bridge\Symfony\HttpFoundation\RequestFactoryInterface;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 final class RequestMonitoring

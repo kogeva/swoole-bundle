@@ -9,8 +9,8 @@ use K911\Swoole\Bridge\Symfony\HttpFoundation\ResponseProcessorInjectorInterface
 use K911\Swoole\Bridge\Symfony\HttpFoundation\ResponseProcessorInterface;
 use K911\Swoole\Server\RequestHandler\RequestHandlerInterface;
 use K911\Swoole\Server\Runtime\BootableInterface;
-use Swoole\Http\Request as SwooleRequest;
-use Swoole\Http\Response as SwooleResponse;
+use OpenSwoole\Http\Request as SwooleRequest;
+use OpenSwoole\Http\Response as SwooleResponse;
 use Symfony\Component\HttpKernel\TerminableInterface;
 
 final class HttpKernelRequestHandler implements RequestHandlerInterface, BootableInterface
@@ -23,17 +23,12 @@ final class HttpKernelRequestHandler implements RequestHandlerInterface, Bootabl
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function boot(array $runtimeConfiguration = []): void
     {
         $this->kernelPool->boot();
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function handle(SwooleRequest $request, SwooleResponse $response): void

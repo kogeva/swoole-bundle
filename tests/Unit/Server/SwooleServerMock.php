@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Tests\Unit\Server;
 
-use Swoole\Server;
+use OpenSwoole\Server;
 
 if (PHP_MAJOR_VERSION === 7) {
     final class SwooleServerMock extends Server

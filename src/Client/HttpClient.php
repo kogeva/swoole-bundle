@@ -9,8 +9,8 @@ use K911\Swoole\Client\Exception\MissingContentTypeException;
 use K911\Swoole\Client\Exception\UnsupportedContentTypeException;
 use K911\Swoole\Client\Exception\UnsupportedHttpMethodException;
 use K911\Swoole\Server\Config\Socket;
-use Swoole\Coroutine;
-use Swoole\Coroutine\Http\Client;
+use OpenSwoole\Coroutine;
+use OpenSwoole\Coroutine\Http\Client;
 
 /**
  * Mainly used for server tests.

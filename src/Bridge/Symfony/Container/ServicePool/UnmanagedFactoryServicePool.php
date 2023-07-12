@@ -26,7 +26,7 @@ final class UnmanagedFactoryServicePool extends BaseServicePool
         \Closure $instantiator,
         Mutex $mutex,
         int $instancesLimit = 50,
-        ?Resetter $resetter = null
+        Resetter $resetter = null
     ) {
         $this->instantiator = $instantiator;
 

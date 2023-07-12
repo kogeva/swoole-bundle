@@ -4,17 +4,14 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Server\TaskHandler;
 
-use Swoole\Server;
+use OpenSwoole\Server;
 
 /**
- * Task Finished Handler is called only when Task Handler returns any result or Swoole\Server->finish() is called.
+ * Task Finished Handler is called only when Task Handler returns any result or OpenSwoole\Server->finish() is called.
  *
  * @see https://www.swoole.co.uk/docs/modules/swoole-server/callback-functions#onfinish
  */
 interface TaskFinishedHandlerInterface
 {
-    /**
-     * @param mixed $data
-     */
     public function handle(Server $server, int $taskId, $data): void;
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Bridge\Upscale\Blackfire\Profiling;
 
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 use Upscale\Swoole\Blackfire\Profiler;
 use Upscale\Swoole\Blackfire\ProfilerDecorator;
 use Upscale\Swoole\Reflection\Http\Server as UpscaleServer;

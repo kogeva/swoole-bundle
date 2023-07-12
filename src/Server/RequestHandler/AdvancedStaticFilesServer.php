@@ -7,8 +7,8 @@ namespace K911\Swoole\Server\RequestHandler;
 use Assert\AssertionFailedException;
 use K911\Swoole\Server\HttpServerConfiguration;
 use K911\Swoole\Server\Runtime\BootableInterface;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 
 /**
  * Advanced static files server simplifies serving static content directly by swoole server.
@@ -112,8 +112,6 @@ final class AdvancedStaticFilesServer implements RequestHandlerInterface, Bootab
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws AssertionFailedException
      */
     public function boot(array $runtimeConfiguration = []): void
@@ -125,9 +123,6 @@ final class AdvancedStaticFilesServer implements RequestHandlerInterface, Bootab
         $this->publicDir = $this->configuration->getPublicDir();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(Request $request, Response $response): void
     {
         if ('GET' === $request->server['request_method']) {

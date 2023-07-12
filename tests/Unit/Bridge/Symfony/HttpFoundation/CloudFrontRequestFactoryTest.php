@@ -8,7 +8,7 @@ use K911\Swoole\Bridge\Symfony\HttpFoundation\CloudFrontRequestFactory;
 use K911\Swoole\Bridge\Symfony\HttpFoundation\RequestFactoryInterface;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
-use Swoole\Http\Request as SwooleRequest;
+use OpenSwoole\Http\Request as SwooleRequest;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 class CloudFrontRequestFactoryTest extends TestCase

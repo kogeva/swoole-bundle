@@ -21,7 +21,7 @@ final class UnmanagedFactoryProxifier
     /**
      * returns new service id of the proxified service.
      */
-    public function proxifyService(string $serviceId, ?string $externalResetter = null): string
+    public function proxifyService(string $serviceId, string $externalResetter = null): string
     {
         if (!$this->container->has($serviceId)) {
             throw new \RuntimeException(sprintf('Service missing: %s', $serviceId));
@@ -49,7 +49,7 @@ final class UnmanagedFactoryProxifier
     private function prepareProxy(
         string $wrappedServiceId,
         Definition $serviceDef,
-        ?string $externalResetter = null
+        string $externalResetter = null
     ): Definition {
         /** @var class-string $serviceClass */
         $serviceClass = $serviceDef->getClass();

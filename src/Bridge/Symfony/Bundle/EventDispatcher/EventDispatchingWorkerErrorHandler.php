@@ -6,7 +6,7 @@ namespace K911\Swoole\Bridge\Symfony\Bundle\EventDispatcher;
 
 use K911\Swoole\Bridge\Symfony\Event\WorkerErrorEvent;
 use K911\Swoole\Server\WorkerHandler\WorkerErrorHandlerInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class EventDispatchingWorkerErrorHandler implements WorkerErrorHandlerInterface

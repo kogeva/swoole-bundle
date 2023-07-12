@@ -17,7 +17,7 @@ use K911\Swoole\Server\HttpServer;
 use K911\Swoole\Server\HttpServerConfiguration;
 use K911\Swoole\Server\HttpServerFactory;
 use K911\Swoole\Server\Runtime\BootableInterface;
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -48,8 +48,6 @@ abstract class AbstractServerStartCommand extends Command
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \Assert\AssertionFailedException
      */
@@ -69,8 +67,6 @@ abstract class AbstractServerStartCommand extends Command
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -94,7 +90,7 @@ abstract class AbstractServerStartCommand extends Command
         $this->server->attach($swooleServer);
 
         // TODO: Lock server configuration here
-//        $this->serverConfiguration->lock();
+        //        $this->serverConfiguration->lock();
 
         $runtimeConfiguration = ['symfonyStyle' => $io] + $this->prepareRuntimeConfiguration($this->serverConfiguration, $input);
         $this->bootManager->boot($runtimeConfiguration);
@@ -307,7 +303,7 @@ abstract class AbstractServerStartCommand extends Command
 
         $signalRegistry = $this->getApplication()->getSignalRegistry();
 
-        foreach ([\SIGINT, \SIGTERM] as $signal) {
+        foreach ([\SIGINT, \SIGTERM, ] as $signal) {
             // add next handler so the default exit call won't be called
             $signalRegistry->register($signal, function ($signal, $hasNext) {});
         }

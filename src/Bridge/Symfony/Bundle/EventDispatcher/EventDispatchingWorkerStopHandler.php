@@ -6,7 +6,7 @@ namespace K911\Swoole\Bridge\Symfony\Bundle\EventDispatcher;
 
 use K911\Swoole\Bridge\Symfony\Event\WorkerStoppedEvent;
 use K911\Swoole\Server\WorkerHandler\WorkerStopHandlerInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class EventDispatchingWorkerStopHandler implements WorkerStopHandlerInterface

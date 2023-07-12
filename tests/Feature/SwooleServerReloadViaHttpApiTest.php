@@ -7,7 +7,7 @@ namespace K911\Swoole\Tests\Feature;
 use K911\Swoole\Client\Http;
 use K911\Swoole\Client\HttpClient;
 use K911\Swoole\Tests\Fixtures\Symfony\TestBundle\Test\ServerTestCase;
-use Swoole\Coroutine;
+use OpenSwoole\Coroutine;
 
 final class SwooleServerReloadViaHttpApiTest extends ServerTestCase
 {

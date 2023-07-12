@@ -6,7 +6,7 @@ namespace K911\Swoole\Server\Configurator;
 
 use K911\Swoole\Server\HttpServerConfiguration;
 use K911\Swoole\Server\TaskHandler\TaskFinishedHandlerInterface;
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 
 final class WithTaskFinishedHandler implements ConfiguratorInterface
 {
@@ -16,9 +16,6 @@ final class WithTaskFinishedHandler implements ConfiguratorInterface
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configure(Server $server): void
     {
         if ($this->configuration->getTaskWorkerCount() > 0) {

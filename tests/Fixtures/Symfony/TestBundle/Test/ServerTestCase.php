@@ -31,7 +31,7 @@ class ServerTestCase extends KernelTestCase
         sleep(self::coverageEnabled() ? 3 : 1);
     }
 
-    public static function resolveEnvironment(?string $env = null): string
+    public static function resolveEnvironment(string $env = null): string
     {
         if (self::coverageEnabled()) {
             if ('test' === $env || null === $env) {

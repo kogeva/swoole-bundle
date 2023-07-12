@@ -7,7 +7,7 @@ namespace K911\Swoole\Server\Api;
 use K911\Swoole\Server\Config\Sockets;
 use K911\Swoole\Server\Configurator\ConfiguratorInterface;
 use K911\Swoole\Server\RequestHandler\RequestHandlerInterface;
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 
 /**
  * @internal This class will be dropped, once named server listeners will be implemented

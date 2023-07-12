@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Component;
 
-use Swoole\Atomic;
+use OpenSwoole\Atomic;
 
 final class AtomicCounter
 {

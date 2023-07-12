@@ -9,9 +9,9 @@ use K911\Swoole\Server\Exception\NotRunningException;
 use K911\Swoole\Server\Exception\PortUnavailableException;
 use K911\Swoole\Server\Exception\UnexpectedPortException;
 use K911\Swoole\Server\Exception\UninitializedException;
-use Swoole\Http\Server;
-use Swoole\Process;
-use Swoole\Server\Port as Listener;
+use OpenSwoole\Http\Server;
+use OpenSwoole\Process;
+use OpenSwoole\Server\Port as Listener;
 
 final class HttpServer
 {

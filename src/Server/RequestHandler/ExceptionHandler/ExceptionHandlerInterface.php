@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Server\RequestHandler\ExceptionHandler;
 
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 
 interface ExceptionHandlerInterface
 {

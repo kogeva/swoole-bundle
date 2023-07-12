@@ -27,7 +27,7 @@ class AccessLogDataMap
     /**
      * Client IP address of the request (%a).
      */
-    public function getClientIp(): string
+    public function getClientIp(): ?string
     {
         $headers = ['x-real-ip', 'client-ip', 'x-forwarded-for'];
 
@@ -99,7 +99,7 @@ class AccessLogDataMap
     /**
      * Returns a message header.
      */
-    public function getRequestHeader(string $name): string
+    public function getRequestHeader(string $name): ?string
     {
         return $this->request->headers->get(\strtolower($name), '-');
     }
@@ -107,7 +107,7 @@ class AccessLogDataMap
     /**
      * Returns a message header.
      */
-    public function getResponseHeader(string $name): string
+    public function getResponseHeader(string $name): ?string
     {
         return $this->response->headers->get(\strtolower($name), '-');
     }

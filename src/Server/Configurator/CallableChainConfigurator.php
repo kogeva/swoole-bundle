@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Server\Configurator;
 
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 
 final class CallableChainConfigurator implements ConfiguratorInterface
 {
@@ -15,9 +15,6 @@ final class CallableChainConfigurator implements ConfiguratorInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configure(Server $server): void
     {
         /** @var callable $configurator */

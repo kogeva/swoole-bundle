@@ -7,8 +7,8 @@ namespace K911\Swoole\Bridge\Symfony\ErrorHandler;
 use K911\Swoole\Bridge\Symfony\HttpFoundation\RequestFactoryInterface;
 use K911\Swoole\Bridge\Symfony\HttpFoundation\ResponseProcessorInterface;
 use K911\Swoole\Server\RequestHandler\ExceptionHandler\ExceptionHandlerInterface;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\TerminableInterface;
 

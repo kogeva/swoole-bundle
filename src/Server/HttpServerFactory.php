@@ -6,13 +6,13 @@ namespace K911\Swoole\Server;
 
 use Assert\Assertion;
 use K911\Swoole\Server\Config\Socket;
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 
 final class HttpServerFactory
 {
     private const SWOOLE_RUNNING_MODE = [
-        'process' => \SWOOLE_PROCESS,
-        'reactor' => \SWOOLE_BASE,
+        'process' => Server::POOL_MODE,
+        'reactor' => Server::SIMPLE_MODE,
         //        'thread' => SWOOLE_THREAD,
     ];
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Bridge\Symfony\Event;
 
-use Swoole\Server;
+use OpenSwoole\Server;
 use Symfony\Contracts\EventDispatcher\Event;
 
 final class WorkerStoppedEvent extends Event

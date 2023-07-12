@@ -6,8 +6,8 @@ namespace K911\Swoole\Bridge\Symfony\HttpKernel;
 
 use K911\Swoole\Bridge\Symfony\Container\CoWrapper;
 use K911\Swoole\Server\RequestHandler\RequestHandlerInterface;
-use Swoole\Http\Request as SwooleRequest;
-use Swoole\Http\Response as SwooleResponse;
+use OpenSwoole\Http\Request as SwooleRequest;
+use OpenSwoole\Http\Response as SwooleResponse;
 
 final class ContextReleasingHttpKernelRequestHandler implements RequestHandlerInterface
 {
@@ -18,8 +18,6 @@ final class ContextReleasingHttpKernelRequestHandler implements RequestHandlerIn
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function handle(SwooleRequest $request, SwooleResponse $response): void

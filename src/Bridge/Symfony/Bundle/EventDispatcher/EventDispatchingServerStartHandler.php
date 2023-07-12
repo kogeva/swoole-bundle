@@ -6,7 +6,7 @@ namespace K911\Swoole\Bridge\Symfony\Bundle\EventDispatcher;
 
 use K911\Swoole\Bridge\Symfony\Event\ServerStartedEvent;
 use K911\Swoole\Server\LifecycleHandler\ServerStartHandlerInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class EventDispatchingServerStartHandler implements ServerStartHandlerInterface

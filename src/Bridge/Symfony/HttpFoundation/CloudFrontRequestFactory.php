@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Bridge\Symfony\HttpFoundation;
 
-use Swoole\Http\Request as SwooleRequest;
+use OpenSwoole\Http\Request as SwooleRequest;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 final class CloudFrontRequestFactory implements RequestFactoryInterface
@@ -14,8 +14,6 @@ final class CloudFrontRequestFactory implements RequestFactoryInterface
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-protocol
      */
     public function make(SwooleRequest $request): HttpFoundationRequest

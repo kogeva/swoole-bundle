@@ -6,7 +6,7 @@ namespace K911\Swoole\Server\Api;
 
 use K911\Swoole\Server\HttpServer;
 use K911\Swoole\Server\HttpServerConfiguration;
-use Swoole\Server\Port;
+use OpenSwoole\Server\Port;
 
 /**
  * API Server for Swoole HTTP Server. If enabled, is running on another port, than regular server.
@@ -20,9 +20,6 @@ final class ApiServer implements ApiServerInterface
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function metrics(): array
     {
         $metrics = $this->server->metrics();
@@ -41,25 +38,16 @@ final class ApiServer implements ApiServerInterface
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function shutdown(): void
     {
         $this->server->shutdown();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function reload(): void
     {
         $this->server->reload();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function status(): array
     {
         $swooleServer = $this->server->getServer();

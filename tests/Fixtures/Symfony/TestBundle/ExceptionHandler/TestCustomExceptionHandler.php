@@ -6,8 +6,8 @@ namespace K911\Swoole\Tests\Fixtures\Symfony\TestBundle\ExceptionHandler;
 
 use K911\Swoole\Client\Http;
 use K911\Swoole\Server\RequestHandler\ExceptionHandler\ExceptionHandlerInterface;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 
 final class TestCustomExceptionHandler implements ExceptionHandlerInterface
 {

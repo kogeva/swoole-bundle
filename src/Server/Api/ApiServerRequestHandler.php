@@ -6,8 +6,8 @@ namespace K911\Swoole\Server\Api;
 
 use K911\Swoole\Client\Http;
 use K911\Swoole\Server\RequestHandler\RequestHandlerInterface;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 
 final class ApiServerRequestHandler implements RequestHandlerInterface
 {
@@ -41,8 +41,6 @@ final class ApiServerRequestHandler implements RequestHandlerInterface
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function handle(Request $request, Response $response): void

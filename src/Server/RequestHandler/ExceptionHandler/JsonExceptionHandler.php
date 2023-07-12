@@ -6,8 +6,8 @@ namespace K911\Swoole\Server\RequestHandler\ExceptionHandler;
 
 use K911\Swoole\Client\Http;
 use K911\Swoole\Component\ExceptionArrayTransformer;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 
 final class JsonExceptionHandler implements ExceptionHandlerInterface
 {

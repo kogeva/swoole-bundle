@@ -6,8 +6,8 @@ namespace K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\RequestHandler;
 
 use K911\Swoole\Server\RequestHandler\RequestHandlerInterface;
 use K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\Coverage\CodeCoverageManager;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 
 final class CodeCoverageRequestHandler implements RequestHandlerInterface
 {
@@ -17,9 +17,6 @@ final class CodeCoverageRequestHandler implements RequestHandlerInterface
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(Request $request, Response $response): void
     {
         $testName = sprintf('test_request_%s', bin2hex(random_bytes(8)));

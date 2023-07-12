@@ -7,7 +7,7 @@ namespace K911\Swoole\Tests\Unit\Bridge\Symfony\HttpFoundation;
 use K911\Swoole\Bridge\Symfony\HttpFoundation\ResponseProcessor;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
-use Swoole\Http\Response as SwooleResponse;
+use OpenSwoole\Http\Response as SwooleResponse;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 
 class ResponseProcessorTest extends TestCase

@@ -7,6 +7,8 @@ namespace K911\Swoole\Server;
 use Assert\Assertion;
 use K911\Swoole\Server\Config\Socket;
 use K911\Swoole\Server\Config\Sockets;
+use OpenSwoole\Constant;
+use OpenSwoole\Util;
 
 /**
  * @todo Create interface and split this class
@@ -68,16 +70,16 @@ class HttpServerConfiguration
     ];
 
     private const SWOOLE_LOG_LEVELS = [
-        'debug' => \SWOOLE_LOG_DEBUG,
-        'trace' => \SWOOLE_LOG_TRACE,
-        'info' => \SWOOLE_LOG_INFO,
-        'notice' => \SWOOLE_LOG_NOTICE,
-        'warning' => \SWOOLE_LOG_WARNING,
-        'error' => \SWOOLE_LOG_ERROR,
+        'debug' => Constant::LOG_DEBUG,
+        'trace' => Constant::LOG_TRACE,
+        'info' => Constant::LOG_INFO,
+        'notice' => Constant::LOG_NOTICE,
+        'warning' => Constant::LOG_WARNING,
+        'error' => Constant::LOG_ERROR,
     ];
 
     /**
-     * @var array<string, mixed>
+     * @var array<string, null|int|string>
      */
     private array $settings;
 
@@ -212,7 +214,7 @@ class HttpServerConfiguration
 
     public function getReactorCount(): int
     {
-        return $this->settings[self::SWOOLE_HTTP_SERVER_CONFIG_REACTOR_COUNT];
+        return (int) $this->settings[self::SWOOLE_HTTP_SERVER_CONFIG_REACTOR_COUNT];
     }
 
     public function getServerSocket(): Socket
@@ -222,7 +224,7 @@ class HttpServerConfiguration
 
     public function getMaxRequest(): int
     {
-        return $this->settings[self::SWOOLE_HTTP_SERVER_CONFIG_WORKER_MAX_REQUEST];
+        return (int) $this->settings[self::SWOOLE_HTTP_SERVER_CONFIG_WORKER_MAX_REQUEST];
     }
 
     public function getMaxRequestGrace(): ?int
@@ -248,7 +250,7 @@ class HttpServerConfiguration
     /**
      * Get settings formatted for swoole http server.
      *
-     * @see \Swoole\Http\Server::set()
+     * @see \OpenSwoole\Http\Server::set()
      *
      * @todo create swoole settings transformer
      */
@@ -313,7 +315,7 @@ class HttpServerConfiguration
     /**
      * @throws \Assert\AssertionFailedException
      */
-    public function daemonize(?string $pidFile = null): void
+    public function daemonize(string $pidFile = null): void
     {
         $settings = [self::SWOOLE_HTTP_SERVER_CONFIG_DAEMONIZE => true];
 
@@ -342,7 +344,7 @@ class HttpServerConfiguration
     private function initializeSettings(array $init): void
     {
         $this->settings = [];
-        $cpuCores = swoole_cpu_num();
+        $cpuCores = Util::getCPUNum();
 
         if (!isset($init[self::SWOOLE_HTTP_SERVER_CONFIG_REACTOR_COUNT])) {
             $init[self::SWOOLE_HTTP_SERVER_CONFIG_REACTOR_COUNT] = $cpuCores;

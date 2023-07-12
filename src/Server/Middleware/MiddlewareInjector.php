@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Server\Middleware;
 
-use Swoole\Http\Server;
-use Swoole\Server\Port;
+use OpenSwoole\Http\Server;
+use OpenSwoole\Server\Port;
 
 final class MiddlewareInjector
 {

@@ -6,7 +6,7 @@ namespace K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\ServerLifecycle;
 
 use K911\Swoole\Server\LifecycleHandler\ServerManagerStopHandlerInterface;
 use K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\Coverage\CodeCoverageManager;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class CoverageStartOnServerManagerStop implements ServerManagerStopHandlerInterface
 {
@@ -16,9 +16,6 @@ final class CoverageStartOnServerManagerStop implements ServerManagerStopHandler
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(Server $server): void
     {
         if ($this->decorated instanceof ServerManagerStopHandlerInterface) {

@@ -7,8 +7,8 @@ namespace K911\Swoole\Tests\Unit\Coroutine;
 use K911\Swoole\Component\Locking\Channel\ChannelMutex;
 use K911\Swoole\Component\Locking\RecursiveOwner\RecursiveOwnerMutex;
 use PHPUnit\Framework\TestCase;
-use Swoole\Coroutine\Scheduler;
-use Swoole\Runtime;
+use OpenSwoole\Coroutine\Scheduler;
+use OpenSwoole\Runtime;
 
 final class RecursiveOwnerMutexTest extends TestCase
 {

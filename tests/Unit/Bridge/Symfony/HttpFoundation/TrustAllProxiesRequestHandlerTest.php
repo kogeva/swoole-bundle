@@ -8,8 +8,8 @@ use K911\Swoole\Bridge\Symfony\HttpFoundation\TrustAllProxiesRequestHandler;
 use K911\Swoole\Server\RequestHandler\RequestHandlerInterface;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
-use Swoole\Http\Request as SwooleRequest;
-use Swoole\Http\Response as SwooleResponse;
+use OpenSwoole\Http\Request as SwooleRequest;
+use OpenSwoole\Http\Response as SwooleResponse;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class TrustAllProxiesRequestHandlerTest extends TestCase

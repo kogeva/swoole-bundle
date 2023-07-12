@@ -6,7 +6,7 @@ namespace K911\Swoole\Bridge\Symfony\Bundle\EventDispatcher;
 
 use K911\Swoole\Bridge\Symfony\Event\WorkerExitedEvent;
 use K911\Swoole\Server\WorkerHandler\WorkerExitHandlerInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class EventDispatchingWorkerExitHandler implements WorkerExitHandlerInterface

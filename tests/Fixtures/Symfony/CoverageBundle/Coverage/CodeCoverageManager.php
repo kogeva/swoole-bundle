@@ -39,7 +39,7 @@ class CodeCoverageManager implements ResetInterface
         $this->initalizeCodeCoverage($parameterBag, $codeCoverage);
     }
 
-    public function start(?string $testName = null): void
+    public function start(string $testName = null): void
     {
         if (!$this->enabled || $this->started) {
             return;
@@ -67,7 +67,7 @@ class CodeCoverageManager implements ResetInterface
         $this->started = false;
     }
 
-    public function finish(?string $fileName = null, ?string $path = null): void
+    public function finish(string $fileName = null, string $path = null): void
     {
         if (!$this->enabled || $this->finished) {
             return;

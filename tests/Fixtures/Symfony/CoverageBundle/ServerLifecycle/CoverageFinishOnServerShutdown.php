@@ -6,7 +6,7 @@ namespace K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\ServerLifecycle;
 
 use K911\Swoole\Server\LifecycleHandler\ServerShutdownHandlerInterface;
 use K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\Coverage\CodeCoverageManager;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class CoverageFinishOnServerShutdown implements ServerShutdownHandlerInterface
 {
@@ -16,9 +16,6 @@ final class CoverageFinishOnServerShutdown implements ServerShutdownHandlerInter
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(Server $server): void
     {
         if ($this->decorated instanceof ServerShutdownHandlerInterface) {

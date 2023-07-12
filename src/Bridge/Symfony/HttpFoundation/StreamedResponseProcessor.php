@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace K911\Swoole\Bridge\Symfony\HttpFoundation;
 
 use Assert\Assertion;
-use Swoole\Http\Response as SwooleResponse;
+use OpenSwoole\Http\Response as SwooleResponse;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -15,9 +15,6 @@ final class StreamedResponseProcessor implements ResponseProcessorInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function process(HttpFoundationResponse $httpFoundationResponse, SwooleResponse $swooleResponse): void
     {
         Assertion::isInstanceOf($httpFoundationResponse, StreamedResponse::class);

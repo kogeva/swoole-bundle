@@ -9,7 +9,7 @@ use K911\Swoole\Bridge\Upscale\Blackfire\Profiling\WithProfiler;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 
 /**
  * @runTestsInSeparateProcesses

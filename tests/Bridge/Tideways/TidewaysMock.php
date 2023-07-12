@@ -60,7 +60,7 @@ namespace Tideways {
         /**
          * @param null|array<string> $trace
          */
-        public static function logFatal(string $message, string $file, int $line, ?string $type = null, ?array $trace = null): void
+        public static function logFatal(string $message, string $file, int $line, string $type = null, array $trace = null): void
         {
         }
 

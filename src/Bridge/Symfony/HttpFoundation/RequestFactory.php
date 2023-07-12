@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Bridge\Symfony\HttpFoundation;
 
-use Swoole\Http\Request as SwooleRequest;
+use OpenSwoole\Http\Request as SwooleRequest;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 final class RequestFactory implements RequestFactoryInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function make(SwooleRequest $request): HttpFoundationRequest
     {
         $server = array_change_key_case($request->server, \CASE_UPPER);

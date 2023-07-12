@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace K911\Swoole\Component\Locking\Channel;
 
 use K911\Swoole\Component\Locking\Mutex;
-use Swoole\Coroutine\Channel;
+use OpenSwoole\Coroutine\Channel;
 
 final class ChannelMutex implements Mutex
 {

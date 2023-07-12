@@ -6,7 +6,7 @@ namespace K911\Swoole\Bridge\Symfony\Messenger;
 
 use K911\Swoole\Server\TaskHandler\TaskHandlerInterface;
 use Psr\Log\LoggerInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class ExceptionLoggingTransportHandler implements TaskHandlerInterface
 {

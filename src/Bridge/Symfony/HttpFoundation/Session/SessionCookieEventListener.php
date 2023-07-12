@@ -110,9 +110,9 @@ final class SessionCookieEventListener implements EventSubscriberInterface
 
     private function isSessionCookie(Cookie $cookie, string $sessionName): bool
     {
-        return $this->sessionCookieParameters['path'] === $cookie->getPath() &&
-            $this->sessionCookieParameters['domain'] === $cookie->getDomain() &&
-            $sessionName === $cookie->getName();
+        return $this->sessionCookieParameters['path'] === $cookie->getPath()
+            && $this->sessionCookieParameters['domain'] === $cookie->getDomain()
+            && $sessionName === $cookie->getName();
     }
 
     private function makeSessionCookie(SessionInterface $session): Cookie
@@ -124,7 +124,7 @@ final class SessionCookieEventListener implements EventSubscriberInterface
             $this->sessionCookieParameters['path'],
             $this->sessionCookieParameters['domain'],
             $this->sessionCookieParameters['secure'],
-            $this->sessionCookieParameters['httponly'],
+            (bool) $this->sessionCookieParameters['httponly'],
             false,
             $this->sessionCookieParameters['samesite']
         );

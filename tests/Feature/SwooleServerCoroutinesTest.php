@@ -10,7 +10,7 @@ use K911\Swoole\Tests\Fixtures\Symfony\TestAppKernel;
 use K911\Swoole\Tests\Fixtures\Symfony\TestBundle\Entity\Test;
 use K911\Swoole\Tests\Fixtures\Symfony\TestBundle\Service\NoAutowiring\ResetCountingRegistry;
 use K911\Swoole\Tests\Fixtures\Symfony\TestBundle\Test\ServerTestCase;
-use Swoole\Coroutine\WaitGroup;
+use OpenSwoole\Coroutine\WaitGroup;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 
 final class SwooleServerCoroutinesTest extends ServerTestCase

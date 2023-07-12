@@ -44,7 +44,7 @@ final class Proxifier
         $this->stabilityCheckers = array_merge(self::DEFAULT_STABILITY_CHECKERS, $stabilityCheckers);
     }
 
-    public function proxifyService(string $serviceId, ?string $externalResetter = null): void
+    public function proxifyService(string $serviceId, string $externalResetter = null): void
     {
         if (!$this->container->has($serviceId)) {
             throw new \RuntimeException(sprintf('Service missing: %s', $serviceId));
@@ -76,7 +76,7 @@ final class Proxifier
         return $this->proxifiedServicePoolRefs;
     }
 
-    private function doProxifyService(string $serviceId, Definition $serviceDef, ?string $externalResetter = null): void
+    private function doProxifyService(string $serviceId, Definition $serviceDef, string $externalResetter = null): void
     {
         if (!$this->container->has($serviceId)) {
             throw new \RuntimeException(sprintf('Service missing: %s', $serviceId));
@@ -102,7 +102,7 @@ final class Proxifier
         $this->proxifiedServicePoolRefs[] = new Reference($svcPoolServiceId);
     }
 
-    private function doProxifyDecoratedService(string $serviceId, Definition $serviceDef, ?string $externalResetter = null): void
+    private function doProxifyDecoratedService(string $serviceId, Definition $serviceDef, string $externalResetter = null): void
     {
         if (null === $serviceDef->innerServiceId) {
             throw new \UnexpectedValueException(sprintf('Inner service id missing for service %s', $serviceId));
@@ -133,7 +133,7 @@ final class Proxifier
     private function prepareServicePool(
         string $wrappedServiceId,
         Definition $serviceDef,
-        ?string $externalResetter = null
+        string $externalResetter = null
     ): Definition {
         $svcPoolDef = new Definition(DiServicePool::class);
         $svcPoolDef->setShared($serviceDef->isShared());

@@ -21,8 +21,8 @@ final class DiServicePool extends BaseServicePool
         private Container $container,
         Mutex $mutex,
         int $instancesLimit = 50,
-        ?Resetter $resetter = null,
-        ?StabilityChecker $stabilityChecker = null
+        Resetter $resetter = null,
+        StabilityChecker $stabilityChecker = null
     ) {
         parent::__construct($mutex, $instancesLimit, $resetter, $stabilityChecker);
     }

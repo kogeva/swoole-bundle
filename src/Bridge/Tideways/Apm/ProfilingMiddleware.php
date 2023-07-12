@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace K911\Swoole\Bridge\Tideways\Apm;
 
 use K911\Swoole\Server\Middleware\Middleware;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 use Tideways\Profiler;
 
 final class ProfilingMiddleware implements Middleware

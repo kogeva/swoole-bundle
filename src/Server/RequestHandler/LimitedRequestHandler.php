@@ -7,8 +7,8 @@ namespace K911\Swoole\Server\RequestHandler;
 use K911\Swoole\Component\AtomicCounter;
 use K911\Swoole\Server\HttpServer;
 use K911\Swoole\Server\Runtime\BootableInterface;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class LimitedRequestHandler implements RequestHandlerInterface, BootableInterface
@@ -25,9 +25,6 @@ final class LimitedRequestHandler implements RequestHandlerInterface, BootableIn
         $this->requestLimit = -1;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function boot(array $runtimeConfiguration = []): void
     {
         $this->requestLimit = (int) ($runtimeConfiguration['requestLimit'] ?? -1);
@@ -35,8 +32,6 @@ final class LimitedRequestHandler implements RequestHandlerInterface, BootableIn
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Assert\AssertionFailedException
      */
     public function handle(Request $request, Response $response): void

@@ -48,7 +48,7 @@ final class FinalClassModifier
         }
     }
 
-    public static function dumpCache(?string $cacheDir = null): void
+    public static function dumpCache(string $cacheDir = null): void
     {
         $cache = self::getCache($cacheDir);
         $item = $cache->getItem('class_list');
@@ -85,7 +85,7 @@ final class FinalClassModifier
         self::getCache($cacheDir);
     }
 
-    private static function getCache(?string $cacheDir = null): FilesystemAdapter
+    private static function getCache(string $cacheDir = null): FilesystemAdapter
     {
         if (self::$cacheDir === $cacheDir || null === $cacheDir) {
             return self::$cache;

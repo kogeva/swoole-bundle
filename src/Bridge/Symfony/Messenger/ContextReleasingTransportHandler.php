@@ -6,7 +6,7 @@ namespace K911\Swoole\Bridge\Symfony\Messenger;
 
 use K911\Swoole\Bridge\Symfony\Container\CoWrapper;
 use K911\Swoole\Server\TaskHandler\TaskHandlerInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class ContextReleasingTransportHandler implements TaskHandlerInterface
 {
@@ -17,8 +17,6 @@ final class ContextReleasingTransportHandler implements TaskHandlerInterface
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function handle(Server $server, Server\Task $task): void

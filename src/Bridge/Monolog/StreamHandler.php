@@ -43,7 +43,7 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
          *
          * @throws \InvalidArgumentException If stream is not a resource or string
          */
-        public function __construct($stream, int|string|Level $level = Level::Debug, bool $bubble = true, ?int $filePermission = null, bool $useLocking = false)
+        public function __construct($stream, int|string|Level $level = Level::Debug, bool $bubble = true, int $filePermission = null, bool $useLocking = false)
         {
             parent::__construct($level, $bubble);
 
@@ -74,9 +74,6 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
             $this->useLocking = $useLocking;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         public function close(): void
         {
             if (null !== $this->url && is_resource($this->stream)) {
@@ -121,9 +118,6 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
             return true;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         protected function write(LogRecord $record): void
         {
             if (!is_resource($this->stream)) {
@@ -259,7 +253,7 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
          *
          * @throws \InvalidArgumentException If stream is not a resource or string
          */
-        public function __construct($stream, $level = Logger::DEBUG, bool $bubble = true, ?int $filePermission = null, bool $useLocking = false)
+        public function __construct($stream, $level = Logger::DEBUG, bool $bubble = true, int $filePermission = null, bool $useLocking = false)
         {
             parent::__construct($level, $bubble);
 
@@ -290,9 +284,6 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
             $this->useLocking = $useLocking;
         }
 
-        /**
-         * {@inheritDoc}
-         */
         public function close(): void
         {
             if ($this->url && is_resource($this->stream)) {
@@ -337,10 +328,7 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
             return true;
         }
 
-        /**
-         * {@inheritDoc}
-         */
-        protected function write(array $record): void
+        protected function write(LogRecord $record): void
         {
             if (!is_resource($this->stream)) {
                 $url = $this->url;
@@ -471,7 +459,7 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
          * @throws \Exception                If a missing directory is not buildable
          * @throws \InvalidArgumentException If stream is not a resource or string
          */
-        public function __construct($stream, $level = Logger::DEBUG, bool $bubble = true, ?int $filePermission = null, bool $useLocking = false)
+        public function __construct($stream, $level = Logger::DEBUG, bool $bubble = true, int $filePermission = null, bool $useLocking = false)
         {
             parent::__construct($level, $bubble);
             if (is_resource($stream)) {
@@ -486,9 +474,6 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
             $this->useLocking = $useLocking;
         }
 
-        /**
-         * {@inheritdoc}
-         */
         public function close(): void
         {
             if ($this->url && is_resource($this->stream)) {
@@ -521,10 +506,7 @@ if (version_compare(InstalledVersions::getVersion('monolog/monolog'), '3.0.0') >
             $this->mutex = $mutex;
         }
 
-        /**
-         * {@inheritdoc}
-         */
-        protected function write(array $record): void
+        protected function write(LogRecord $record): void
         {
             if (!is_resource($this->stream)) {
                 if (null === $this->url || '' === $this->url) {

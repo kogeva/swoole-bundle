@@ -7,7 +7,7 @@ namespace K911\Swoole\Server\Runtime\HMR;
 use Assert\Assertion;
 use Assert\AssertionFailedException;
 use K911\Swoole\Server\Runtime\BootableInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class InotifyHMR implements HotModuleReloaderInterface, BootableInterface
 {
@@ -49,9 +49,6 @@ final class InotifyHMR implements HotModuleReloaderInterface, BootableInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function tick(Server $server): void
     {
         $events = inotify_read($this->inotify);
@@ -64,8 +61,6 @@ final class InotifyHMR implements HotModuleReloaderInterface, BootableInterface
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws AssertionFailedException
      */
     public function boot(array $runtimeConfiguration = []): void

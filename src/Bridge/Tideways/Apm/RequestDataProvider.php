@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace K911\Swoole\Bridge\Tideways\Apm;
 
 use K911\Swoole\Bridge\Symfony\HttpFoundation\RequestFactoryInterface;
-use Swoole\Http\Request as SwooleRequest;
+use OpenSwoole\Http\Request as SwooleRequest;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 final class RequestDataProvider

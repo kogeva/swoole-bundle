@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace K911\Swoole\Bridge\Upscale\Blackfire\Profiling;
 
 use K911\Swoole\Server\Configurator\ConfiguratorInterface;
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 
 final class WithProfiler implements ConfiguratorInterface
 {
@@ -13,9 +13,6 @@ final class WithProfiler implements ConfiguratorInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configure(Server $server): void
     {
         $this->profilerActivator->activate($server);

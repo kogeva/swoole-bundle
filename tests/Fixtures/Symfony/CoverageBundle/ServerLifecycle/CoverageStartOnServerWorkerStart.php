@@ -6,7 +6,7 @@ namespace K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\ServerLifecycle;
 
 use K911\Swoole\Server\WorkerHandler\WorkerStartHandlerInterface;
 use K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\Coverage\CodeCoverageManager;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class CoverageStartOnServerWorkerStart implements WorkerStartHandlerInterface
 {
@@ -16,9 +16,6 @@ final class CoverageStartOnServerWorkerStart implements WorkerStartHandlerInterf
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(Server $worker, int $workerId): void
     {
         $this->codeCoverageManager->start(sprintf('test_worker_%d', $workerId));

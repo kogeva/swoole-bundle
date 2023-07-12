@@ -5,8 +5,8 @@ namespace K911\Swoole\Tests\Fixtures\Symfony\TestBundle\Blackfire;
 use Blackfire\Client;
 use Blackfire\Probe;
 use Blackfire\Profile\Configuration;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 use Upscale\Swoole\Blackfire\Profiler;
 
 class CollectionProfiler extends Profiler

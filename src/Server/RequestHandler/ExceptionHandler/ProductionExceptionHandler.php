@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace K911\Swoole\Server\RequestHandler\ExceptionHandler;
 
 use K911\Swoole\Client\Http;
-use Swoole\Http\Request;
-use Swoole\Http\Response;
+use OpenSwoole\Http\Request;
+use OpenSwoole\Http\Response;
 
 final class ProductionExceptionHandler implements ExceptionHandlerInterface
 {

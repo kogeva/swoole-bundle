@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace K911\Swoole\Server\WorkerHandler;
 
 use K911\Swoole\Server\Runtime\HMR\HotModuleReloaderInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class HMRWorkerStartHandler implements WorkerStartHandlerInterface
 {
@@ -16,9 +16,6 @@ final class HMRWorkerStartHandler implements WorkerStartHandlerInterface
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(Server $worker, int $workerId): void
     {
         if ($this->decorated instanceof WorkerStartHandlerInterface) {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Tests\Unit\Server;
 
-use Swoole\Http\Server;
+use OpenSwoole\Http\Server;
 
 if (PHP_MAJOR_VERSION === 7) {
     final class SwooleHttpServerMock extends Server
@@ -18,10 +18,12 @@ if (PHP_MAJOR_VERSION === 7) {
             parent::__construct('localhost', 31999);
         }
 
-        public function on($event, $callback): void
+        public function on($event, $callback): bool
         {
             $this->registeredEvent = true;
             $this->registeredEventPair = [$event, $callback];
+
+            return true;
         }
 
         public static function make(): self

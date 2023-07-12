@@ -10,7 +10,7 @@ namespace K911\Swoole;
  *
  * @param null|string $scope class scope useful when property is inherited
  */
-function replace_object_property(object $obj, string $propertyName, mixed $newValue, ?string $scope = null): void
+function replace_object_property(object $obj, string $propertyName, mixed $newValue, string $scope = null): void
 {
     \Closure::bind(function (string $propertyName, $newValue): void {
         $this->$propertyName = $newValue;
@@ -22,12 +22,12 @@ function replace_object_property(object $obj, string $propertyName, mixed $newVa
  * Property may not be public.
  *
  * @param null|string $scope class scope useful when property is inherited
- *
- * @return mixed
  */
-function &get_object_property(object $obj, string $propertyName, ?string $scope = null)
+function &get_object_property(object $obj, string $propertyName, string $scope = null)
 {
-    return \Closure::bind(fn &(string $propertyName) => $this->$propertyName, $obj, $scope ?? $obj)($propertyName);
+    $var = \Closure::bind(fn &(string $propertyName) => $this->$propertyName, $obj, $scope ?? $obj)($propertyName);
+
+    return $var;
 }
 
 /**

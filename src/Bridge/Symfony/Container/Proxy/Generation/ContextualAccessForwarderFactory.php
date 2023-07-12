@@ -19,7 +19,7 @@ class ContextualAccessForwarderFactory extends AbstractBaseFactory
 {
     private $generator;
 
-    public function __construct(?Configuration $configuration = null)
+    public function __construct(Configuration $configuration = null)
     {
         parent::__construct($configuration);
 

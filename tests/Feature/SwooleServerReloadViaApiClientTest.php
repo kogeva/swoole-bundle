@@ -9,7 +9,7 @@ use K911\Swoole\Server\Api\ApiServerClientFactory;
 use K911\Swoole\Server\Config\Socket;
 use K911\Swoole\Server\Config\Sockets;
 use K911\Swoole\Tests\Fixtures\Symfony\TestBundle\Test\ServerTestCase;
-use Swoole\Coroutine;
+use OpenSwoole\Coroutine;
 
 final class SwooleServerReloadViaApiClientTest extends ServerTestCase
 {

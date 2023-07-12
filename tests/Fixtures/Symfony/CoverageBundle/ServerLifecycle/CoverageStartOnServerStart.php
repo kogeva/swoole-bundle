@@ -6,7 +6,7 @@ namespace K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\ServerLifecycle;
 
 use K911\Swoole\Server\LifecycleHandler\ServerStartHandlerInterface;
 use K911\Swoole\Tests\Fixtures\Symfony\CoverageBundle\Coverage\CodeCoverageManager;
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class CoverageStartOnServerStart implements ServerStartHandlerInterface
 {
@@ -16,9 +16,6 @@ final class CoverageStartOnServerStart implements ServerStartHandlerInterface
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(Server $server): void
     {
         $this->codeCoverageManager->start('test_server');

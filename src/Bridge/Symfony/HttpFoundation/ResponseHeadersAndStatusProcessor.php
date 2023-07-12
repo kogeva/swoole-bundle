@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Bridge\Symfony\HttpFoundation;
 
-use Swoole\Http\Response as SwooleResponse;
+use OpenSwoole\Http\Response as SwooleResponse;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 
 final class ResponseHeadersAndStatusProcessor implements ResponseProcessorInterface
@@ -13,9 +13,6 @@ final class ResponseHeadersAndStatusProcessor implements ResponseProcessorInterf
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function process(HttpFoundationResponse $httpFoundationResponse, SwooleResponse $swooleResponse): void
     {
         foreach ($httpFoundationResponse->headers->allPreserveCaseWithoutCookies() as $name => $values) {

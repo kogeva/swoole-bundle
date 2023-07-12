@@ -5,17 +5,18 @@ declare(strict_types=1);
 namespace K911\Swoole\Server\Config;
 
 use Assert\Assertion;
+use OpenSwoole\Constant;
 
 final class Socket
 {
     private const CONSTANT_SWOOLE_SSL_IS_NOT_DEFINED_ERROR_MESSAGE = 'Constant SWOOLE_SSL is not defined. Please compile swoole extension with SSL support enabled.';
     private const SWOOLE_SOCKET_TYPE = [
-        'tcp' => \SWOOLE_SOCK_TCP,
-        'tcp_ipv6' => \SWOOLE_SOCK_TCP6,
-        'udp' => \SWOOLE_SOCK_UDP,
-        'udp_ipv6' => \SWOOLE_SOCK_UDP6,
-        'unix_dgram' => \SWOOLE_SOCK_UNIX_DGRAM,
-        'unix_stream' => \SWOOLE_SOCK_UNIX_STREAM,
+        'tcp' => Constant::SOCK_TCP,
+        'tcp_ipv6' => Constant::SOCK_TCP6,
+        'udp' => Constant::SOCK_UDP,
+        'udp_ipv6' => Constant::SOCK_UDP6,
+        'unix_dgram' => Constant::SOCK_UNIX_DGRAM,
+        'unix_stream' => Constant::SOCK_UNIX_STREAM,
     ];
 
     /**
@@ -46,7 +47,7 @@ final class Socket
         $this->setPort($port);
 
         if ($ssl) {
-            Assertion::defined('SWOOLE_SSL', self::CONSTANT_SWOOLE_SSL_IS_NOT_DEFINED_ERROR_MESSAGE);
+            Assertion::defined('OpenSwoole\Constant::SSL', self::CONSTANT_SWOOLE_SSL_IS_NOT_DEFINED_ERROR_MESSAGE);
         }
         $this->ssl = $ssl;
     }
@@ -81,10 +82,10 @@ final class Socket
         $resolvedSocketType = self::SWOOLE_SOCKET_TYPE[$this->type];
 
         if ($this->ssl) {
-            if (!\defined('SWOOLE_SSL')) {
+            if (!\defined('OpenSwoole\Constant::SSL')) {
                 throw new \InvalidArgumentException(self::CONSTANT_SWOOLE_SSL_IS_NOT_DEFINED_ERROR_MESSAGE);
             }
-            $resolvedSocketType |= SWOOLE_SSL;
+            $resolvedSocketType |= Constant::SSL;
         }
 
         return $resolvedSocketType;

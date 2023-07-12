@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace K911\Swoole\Coroutine;
 
 use Assert\Assertion;
-use Swoole\Coroutine;
-use Swoole\Coroutine\Channel;
-use Swoole\Coroutine\Scheduler;
+use OpenSwoole\Coroutine;
+use OpenSwoole\Coroutine\Channel;
+use OpenSwoole\Coroutine\Scheduler;
 
 /**
  * @internal

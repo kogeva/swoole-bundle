@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Tests\Unit\Server;
 
-use Swoole\Server;
+use OpenSwoole\Server;
 
 final class SwooleServerMock extends Server
 {
@@ -18,12 +18,10 @@ final class SwooleServerMock extends Server
         $this->taskworker = $taskworker;
     }
 
-    public function tick(int $ms, callable $callback, ...$params): int|bool
+    public function tick(int $ms, callable $callback, ...$params): void
     {
         $this->registeredTick = true;
         $this->registeredTickTuple = [$ms, $callback];
-
-        return true;
     }
 
     public static function make(bool $taskworker = false): self

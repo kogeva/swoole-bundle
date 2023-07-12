@@ -6,7 +6,7 @@ namespace K911\Swoole\Bridge\Symfony\Messenger;
 
 use Assert\Assertion;
 use K911\Swoole\Server\TaskHandler\TaskHandlerInterface;
-use Swoole\Server;
+use OpenSwoole\Server;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
 

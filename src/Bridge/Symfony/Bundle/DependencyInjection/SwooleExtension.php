@@ -45,6 +45,7 @@ use K911\Swoole\Server\TaskHandler\TaskHandlerInterface;
 use K911\Swoole\Server\WorkerHandler\HMRWorkerStartHandler;
 use K911\Swoole\Server\WorkerHandler\WorkerStartHandlerInterface;
 use Monolog\Formatter\LineFormatter;
+use OpenSwoole\Runtime;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -60,16 +61,11 @@ use ZEngine\Core;
 
 final class SwooleExtension extends Extension implements PrependExtensionInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function prepend(ContainerBuilder $container): void
     {
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
@@ -107,17 +103,11 @@ final class SwooleExtension extends Extension implements PrependExtensionInterfa
         $this->assignSwooleConfiguration($swooleSettings, $runningMode, $maxConcurrency, $container);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getAlias(): string
     {
         return 'swoole';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getConfiguration(array $config, ContainerBuilder $container): Configuration
     {
         return Configuration::fromTreeBuilder();
@@ -136,7 +126,7 @@ final class SwooleExtension extends Extension implements PrependExtensionInterfa
             throw new \RuntimeException('Please install lisachenko/z-engine to use coroutines');
         }
 
-        $swooleSettings['hook_flags'] = \SWOOLE_HOOK_ALL;
+        $swooleSettings['hook_flags'] = Runtime::HOOK_ALL;
         $swooleSettings['max_coroutine'] = $coroutineSettings['max_coroutines'];
         $container->setParameter(ContainerConstants::PARAM_COROUTINES_ENABLED, true);
         $maxServiceInstances = $maxConcurrency ?? $swooleSettings['max_coroutine'];

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace K911\Swoole\Server\Runtime\HMR;
 
-use Swoole\Server;
+use OpenSwoole\Server;
 
 interface HotModuleReloaderInterface
 {
